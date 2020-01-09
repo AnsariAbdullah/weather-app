@@ -10,10 +10,8 @@ window.addEventListener('load', () => {
 
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(position=>{
-			console.log(position);
 			long = position.coords.longitude;
 			lat = position.coords.latitude;
-			console.log(long, lat);
 			const proxy = 'https://cors-anywhere.herokuapp.com/'
 			const api = `${proxy}https://api.darksky.net/forecast/1375af5e029e8ae2e530d615f99da203/${lat},${long}`
 			fetch(api)
@@ -21,7 +19,6 @@ window.addEventListener('load', () => {
 					return response.json();
 				})
 				.then(data => {
-					console.log(data);
 					const {temperature, summary, icon} = data.currently;
 
 					// set DOM text
@@ -36,16 +33,14 @@ window.addEventListener('load', () => {
 					getIcons(icon, document.querySelector('.icon'));
 
 					// change fareheit to celsius
-					temperatureSection.addEventListener('click', ()=>{
-						if(temperatureSpan.textContent === 'F'){
-							temperatureSpan.textContent = 'C';
-							temperatureSection.textContent = Math.floor(celcius);
-						}else{
-							temperatureSpan.textContent = 'F';
-							temperatureSection.textContent = temperature;
-						}
-					})
-				})
+					if(temperatureSpan.textContent === 'F'){
+						temperatureSpan.textContent = 'C';
+						temperatureSection.textContent = Math.floor(celcius);
+					}else{
+						temperatureSpan.textContent = 'F';
+						temperatureSection.textContent = temperature;
+					}
+			})
 		})
 	}
 
