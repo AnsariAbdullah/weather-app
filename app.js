@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
 					// set Icons
 					getIcons(icon, document.querySelector('.icon'));
 
-					// change celsius to fareheit
+					// change fareheit to celsius
 					temperatureSection.addEventListener('click', ()=>{
 						if(temperatureSpan.textContent === 'F'){
 							temperatureSpan.textContent = 'C';
