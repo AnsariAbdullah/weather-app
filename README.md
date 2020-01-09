@@ -1,3 +1,3 @@
 ## Weather App build following Dev Ed tutorial
 
-images/screenshot.png
+![Screenshot](images/screenshot.png)
