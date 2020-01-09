@@ -24,6 +24,9 @@
 .temperature{
 	flex-direction: column;
 }
+.temperature-description {
+	font-size: 25px;
+}
 .degree-section{
 	display: flex;
 	align-items: center;
@@ -35,4 +38,11 @@
 }
 .degree-section h2{
 	font-size: 40px;
+}
+
+
+@media only screen and (max-width: 375px) {
+  .location {
+		flex-direction: column;
+  }
 }
